@@ -47,7 +47,7 @@ export default function Sidebar() {
           isOpen ? "translate-x-0" : "-translate-x-full"
         } md:relative md:translate-x-0 md:w-64 md:min-h-screen transition-transform duration-300 ease-in-out z-40`}
       >
-        <div className="flex md:hidden text-black p-7 h-16 justify-between items-center font-semibold text-lg border-b border-gray-200">WhatBytes</div>
+        <div className="flex md:hidden text-black p-7 h-16 justify-between items-center font-bold text-lg  border-b border-gray-200">WhatBytes</div>
         <nav className="flex flex-col space-y-4 mt-8 md:mt-6">
           {sidebarLinks.map((item, index) => (
             <Link
