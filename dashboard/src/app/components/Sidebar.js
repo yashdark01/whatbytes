@@ -27,12 +27,11 @@ const sidebarLinks = [
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const pathname = usePathname(); 
-  const style = {
-    marginRight: 10,
-    color: pathname === href ? "red" : "black",
-  };
+  const pathname = usePathname();
 
+  const handleOnClick = () =>{
+    setIsOpen(!isOpen);
+  }
   return (
     <>
      
@@ -48,14 +47,14 @@ export default function Sidebar() {
           isOpen ? "translate-x-0" : "-translate-x-full"
         } md:relative md:translate-x-0 md:w-64 md:min-h-screen transition-transform duration-300 ease-in-out z-40`}
       >
-        <div className="flex md:hidden text-black p-7justify-between items-center font-semibold text-lg border-b border-gray-200">WhatBytes</div>
-        <nav className="flex flex-col space-y-4 mt-6">
+        <div className="flex md:hidden text-black p-7 h-16 justify-between items-center font-semibold text-lg border-b border-gray-200">WhatBytes</div>
+        <nav className="flex flex-col space-y-4 mt-8 md:mt-6">
           {sidebarLinks.map((item, index) => (
             <Link
               key={index}
               href={item.path}
-              style={style}
-              className="flex items-center font-bold space-x-4 text-gray-600 hover:bg-gray-50 hover:text-blue-600 p-4 rounded-r-full mr-2"
+              className={`flex items-center font-bold space-x-2 md:space-x-4  hover:bg-gray-50 hover:text-blue-600 p-2 md:p-4 rounded-r-full mr-1 md:mr-2 ${pathname === item.path ? "text-blue-600 bg-gray-100" : "text-gray-600"}`}
+              onClick={handleOnClick}
             >
               <span>{item.icon}</span>
               <span>{item.title}</span>

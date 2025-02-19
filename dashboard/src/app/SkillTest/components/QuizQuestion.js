@@ -62,21 +62,21 @@ const SkillTest = () => {
     let newErrors = {};
 
     if (!formData.rank || isNaN(formData.rank) || formData.rank <= 0)
-      newErrors.rank = "Rank must be a number greater than zero.";
+      newErrors.rank = "required It should be number ";
 
     if (
       !formData.percentile ||
       isNaN(formData.percentile) ||
       formData.percentile <= 0
     )
-      newErrors.percentile = "Percentile must be a number greater than zero.";
+      newErrors.percentile = "required It percentile 0-100 ";
 
     if (
       !formData.currentScore ||
       isNaN(formData.currentScore) ||
       formData.currentScore <= 0
     )
-      newErrors.currentScore = "Score must be a number greater than zero.";
+      newErrors.currentScore = "required It score 0-15";
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -120,7 +120,6 @@ const SkillTest = () => {
         </button>
       </div>
 
-      {/* Statistics Section */}
       <div className="border border-gray-300 rounded-lg p-6 w-full mx-auto">
         <h3 className="text-lg font-semibold mb-4">Quick Statistics</h3>
         <div className="flex justify-around items-center text-center w-full">
@@ -160,10 +159,9 @@ const SkillTest = () => {
         </div>
       </div>
 
-      {/* Update Modal */}
       {isUpdate && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
+        <div className="fixed inset-0  flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full">
             <h2 className="text-lg font-semibold mb-4">Update Score</h2>
             <form className="space-y-4" onSubmit={handleSubmit}>
               {[
@@ -178,6 +176,7 @@ const SkillTest = () => {
                     </span>
                     Update your <b>{label}</b>
                   </label>
+                  <div className="flex flex-col justify-center items-end">
                   <input
                     type="number"
                     name={key}
@@ -186,8 +185,11 @@ const SkillTest = () => {
                     className="mt-1 w-28 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 sm:text-sm"
                   />
                   {errors[key] && (
-                    <p className="text-red-600 text-sm">{errors[key]}</p>
+                    <p className="text-red-600 text-xs text-right">{errors[key]}</p>
                   )}
+
+                  </div>
+                  
                 </div>
               ))}
               <div className="flex justify-between mt-4">
@@ -200,7 +202,7 @@ const SkillTest = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-green-600 text-white text-sm rounded hover:bg-green-700"
+                  className="px-4 py-2 bg-blue-800 text-white text-sm rounded hover:bg-blue-700"
                 >
                   Save
                 </button>
