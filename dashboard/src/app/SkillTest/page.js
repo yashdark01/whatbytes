@@ -1,16 +1,30 @@
 "use client";
 
-import SkillList from "./components/SkillCard";
-import ProgressTracker from "./components/ProgressBar";
+import QuestionAnalysis from "./components/QuestionAnalysis";
 import QuizSection from "./components/QuizQuestion";
+import SyllabusAnalysis from "./components/SyllabusAnalysis";
+import ComparisonGraph from "./components/Graph";
 
 export default function SkillTest() {
   return (
-    <div className="p-5 space-y-4">
-      <h1 className="text-2xl font-bold">Skill Test</h1>
-      <ProgressTracker />
-      <SkillList />
-      <QuizSection />
+    <div className="p-5 space-y-4 w-full">
+      <h1 className="text-lg text-gray-600">Skill Test</h1>
+
+      {/* Responsive Layout */}
+      <div className="flex flex-col md:flex-row gap-4 sm:gap-8">
+        
+        {/* Left Section - Quiz & Graph */}
+        <div className="w-full md:w-[60%] flex flex-col gap-4 sm:gap-6">
+          <QuizSection/>
+          <ComparisonGraph/>
+        </div>
+
+        {/* Right Section - Syllabus & Question Analysis */}
+        <div className="w-full md:w-[40%] flex flex-col gap-4 sm:gap-6">
+          <SyllabusAnalysis />
+          <QuestionAnalysis />
+        </div>
+      </div>
     </div>
   );
 }
