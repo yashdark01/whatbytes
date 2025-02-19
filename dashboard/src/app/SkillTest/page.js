@@ -7,7 +7,7 @@ import ComparisonGraph from "./components/Graph";
 
 export default function SkillTest() {
   return (
-    <div className="p-5 space-y-4 w-full">
+    <div className="p-2 md:p-4 space-y-4 w-full">
       <h1 className="text-lg text-gray-600">Skill Test</h1>
 
       <div className="flex flex-col md:flex-row gap-4 sm:gap-8">

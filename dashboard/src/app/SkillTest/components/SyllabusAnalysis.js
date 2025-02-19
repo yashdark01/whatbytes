@@ -11,14 +11,14 @@ const syllabusData = [
 
 export default function SyllabusAnalysis() {
   return (
-    <div className="border border-gray-200 rounded-lg p-6 w-full max-w-2xl mx-auto font-sans ">
-      <h2 className="text-lg font-semibold mb-3">Syllabus Wise Analysis</h2>
+    <div className="border border-gray-200 rounded-lg p-4 md:p-6 w-full max-w-2xl mx-auto font-sans ">
+      <h2 className="text-sm md:text-lg font-semibold mb-3">Syllabus Wise Analysis</h2>
       
       {syllabusData.map((item, index) => (
         <div key={index} className="mb-4">
-          <div className="flex justify-between items-center gap-4 space-y-5">
-            <span className="text-gray-600">{item.title}</span>
-            <span className={`font-semibold text-lg `} style={{ color: item.color1 }}>
+          <div className="flex justify-between items-center gap-3 md:gap-4 space-y-3 md:space-y-5">
+            <span className="text-gray-600 text-xs md:text-sm">{item.title}</span>
+            <span className={`font-semibold text-sm md:text-lg `} style={{ color: item.color1 }}>
               {item.progress}%
             </span>
           </div>

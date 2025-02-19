@@ -96,7 +96,7 @@ const SkillTest = () => {
 
   return (
     <div className="flex flex-col items-center gap-6 w-full">
-      <div className="flex justify-between items-start border border-gray-300 rounded-lg p-6 w-full mx-auto">
+      <div className="flex justify-between items-start border border-gray-300 rounded-lg p-4 md:p-6 w-full mx-auto">
         <div className="flex items-center space-x-4">
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEc9A_S6BPxCDRp5WjMFEfXrpCu1ya2OO-Lw&s"
@@ -104,24 +104,24 @@ const SkillTest = () => {
             className="w-auto h-12"
           />
           <div>
-            <h2 className="text-lg font-semibold">
+            <h2 className="text-sm md:text-lg font-semibold">
               Hyper Text Markup Language
             </h2>
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-600 text-xs md:text-sm">
               Questions: 08 | Duration: 15 mins | Submitted on {currentDate}
             </p>
           </div>
         </div>
         <button
-          className="px-4 py-2 bg-blue-800 text-white text-sm rounded hover:bg-blue-700"
+          className="  px-3 md:px-4 py-2 bg-blue-800 text-white text-sm rounded hover:bg-blue-700"
           onClick={updateData}
         >
           Update
         </button>
       </div>
 
-      <div className="border border-gray-300 rounded-lg p-6 w-full mx-auto">
-        <h3 className="text-lg font-semibold mb-4">Quick Statistics</h3>
+      <div className="border border-gray-300 rounded-lg p-4 md:p-6 w-full mx-auto">
+        <h3 className="text-sm md:text-lg font-semibold mb-4">Quick Statistics</h3>
         <div className="flex justify-around items-center text-center w-full">
           {[
             {
@@ -146,13 +146,13 @@ const SkillTest = () => {
               key: "currentScore",
             },
           ].map(({ label, value, color, icon, key }) => (
-            <div key={key} className="flex justify-around items-center gap-2">
-              <div className="py-3 px-4 bg-gray-100 rounded-full text-2xl">
+            <div key={key} className="flex flex-col md:flex-row justify-around items-center gap-2">
+              <div className="py-2 px-3 md:py-3 md:px-4 bg-gray-100 rounded-full text-lg md:text-2xl">
                 {icon}
               </div>
               <div>
-                <span className={`text-2xl font-bold ${color}`}>{value}</span>
-                <p className="text-gray-400 uppercase text-sm">{label}</p>
+                <span className={`text-lg md:text-2xl font-bold ${color}`}>{value}</span>
+                <p className="text-gray-400 uppercase text-xs md:text-sm">{label}</p>
               </div>
             </div>
           ))}
@@ -162,7 +162,15 @@ const SkillTest = () => {
       {isUpdate && (
         <div className="fixed inset-0  flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full">
-            <h2 className="text-lg font-semibold mb-4">Update Score</h2>
+            <div className = "flex justify-between item-center">
+            <h2 className="text-sm md:text-lg font-semibold mb-4">Update Score</h2>
+            <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEc9A_S6BPxCDRp5WjMFEfXrpCu1ya2OO-Lw&s"
+            alt="HTML Logo"
+            className="w-auto h-8"
+          />
+            </div>
+            
             <form className="space-y-4" onSubmit={handleSubmit}>
               {[
                 { label: "Rank", key: "rank" },
@@ -170,7 +178,7 @@ const SkillTest = () => {
                 { label: "Current Score", key: "currentScore" },
               ].map(({ label, key }, index) => (
                 <div key={key} className="flex justify-between items-center">
-                  <label className="block text-sm font-medium text-gray-700">
+                  <label className="block text-xs md:text-sm font-medium text-gray-700">
                     <span className="py-1 px-2 mr-3 bg-blue-800 rounded-full text-white">
                       {index + 1}
                     </span>
@@ -182,7 +190,7 @@ const SkillTest = () => {
                     name={key}
                     value={formData[key]}
                     onChange={handleInputChange}
-                    className="mt-1 w-28 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 sm:text-sm"
+                    className="mt-1 w-28 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-red-500 focus:border-red-500 text-xs  md:text-sm"
                   />
                   {errors[key] && (
                     <p className="text-red-600 text-xs text-right">{errors[key]}</p>

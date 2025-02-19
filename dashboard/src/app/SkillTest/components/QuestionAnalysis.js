@@ -8,14 +8,14 @@ const ScoreAnalysis = () => {
   const percentage = (currentScore / total) * 100;
 
   return (
-    <div className="border border-gray-200 rounded-lg p-6 min-w-full mx-auto font-sans ">
+    <div className="border border-gray-200 rounded-lg p-4 md:p-6 min-w-full mx-auto font-sans ">
       <div className="flex justify-between items-start">
-        <h3 className="text-lg font-semibold mb-3">Question Analysis</h3>
-        <span className="text-blue-600 text-right font-semibold text-sm">
+        <h3 className="text-sm md:text-lg font-semibold mb-3">Question Analysis</h3>
+        <span className="text-blue-600 text-right font-semibold text-xs md:text-sm">
           {currentScore}/{total}
         </span>
       </div>
-      <span className=" text-sm text-gray-600">
+      <span className=" text-xs md:text-sm text-gray-600">
         <b>
           You scored {currentScore} questions correct out of {total}.
         </b>

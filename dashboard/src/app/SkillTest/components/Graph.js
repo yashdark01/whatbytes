@@ -31,9 +31,9 @@ export default function ComparisonGraph() {
   }, [percentile]);
 
   return (
-    <div className="relative z-0 bg-white p-6 gap-8 rounded-lg border border-gray-200">
-      <h2 className="text-lg font-semibold mb-3">Comparison Graph</h2>
-      <p className="text-sm text-gray-600 mb-3">
+    <div className="relative z-0 bg-white p-4 md:p-6 gap-8 rounded-lg border border-gray-200">
+      <h2 className=" text-sm md:text-lg font-semibold mb-3">Comparison Graph</h2>
+      <p className=" text-xs md:text-sm text-gray-600 mb-3">
         <strong>You scored {percentile}% percentile</strong>, which is lower than the average percentile
         72% of all the engineers who took this assessment.
       </p>
