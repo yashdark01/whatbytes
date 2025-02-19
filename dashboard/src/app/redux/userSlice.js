@@ -11,7 +11,7 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     updateUserData: (state, action) => {
-      Object.assign(state, action.payload); // Updates state
+      Object.assign(state, action.payload); 
     },
   },
 });

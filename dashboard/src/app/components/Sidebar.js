@@ -4,8 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { FiMenu, FiX } from "react-icons/fi";
 import { FaTachometerAlt, FaClipboardList, FaBriefcase } from "react-icons/fa";
-import { usePathname } from "next/navigation";  // ✅ Correct in App Router
-
+import { usePathname } from "next/navigation"; 
 
 const sidebarLinks = [
   {
@@ -28,11 +27,11 @@ const sidebarLinks = [
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const router = useRouter()
+  const pathname = usePathname(); 
   const style = {
     marginRight: 10,
-    color: router.asPath === href ? 'red' : 'black',
-  }
+    color: pathname === href ? "red" : "black",
+  };
 
   return (
     <>
@@ -65,14 +64,6 @@ export default function Sidebar() {
 
         </nav>
       </aside>
-
-      {/* Overlay for mobile
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-black opacity-40 z-30 md:hidden"
-          onClick={() => setIsOpen(false)}
-        ></div>
-      )} */}
     </>
   );
 }

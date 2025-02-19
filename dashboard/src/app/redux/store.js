@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import userReducer from "./userSlice"; // Adjust path
+import userReducer from "./userSlice";
 
 const store = configureStore({
-  reducer: { user: userReducer }, // Must match `useSelector(state => state.user)`
+  reducer: { user: userReducer }, 
 });
 
 export default store;

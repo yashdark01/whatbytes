@@ -10,16 +10,12 @@ export default function SkillTest() {
     <div className="p-5 space-y-4 w-full">
       <h1 className="text-lg text-gray-600">Skill Test</h1>
 
-      {/* Responsive Layout */}
       <div className="flex flex-col md:flex-row gap-4 sm:gap-8">
         
-        {/* Left Section - Quiz & Graph */}
         <div className="w-full md:w-[60%] flex flex-col gap-4 sm:gap-6">
           <QuizSection/>
           <ComparisonGraph/>
         </div>
-
-        {/* Right Section - Syllabus & Question Analysis */}
         <div className="w-full md:w-[40%] flex flex-col gap-4 sm:gap-6">
           <SyllabusAnalysis />
           <QuestionAnalysis />

@@ -40,7 +40,6 @@ export default function ComparisonGraph() {
 
       <ResponsiveContainer width="100%" height={300}>
         <LineChart data={data}>
-          {/* Force X-Axis range to ensure ReferenceLine is visible */}
           <XAxis dataKey="percentile" domain={[0, 100]} type="number" />
           <YAxis />
           <Tooltip />

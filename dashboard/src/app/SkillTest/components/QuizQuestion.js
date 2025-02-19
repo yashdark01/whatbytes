@@ -61,7 +61,6 @@ const SkillTest = () => {
     e.preventDefault();
     let newErrors = {};
 
-    // Validate Inputs
     if (!formData.rank || isNaN(formData.rank) || formData.rank <= 0)
       newErrors.rank = "Rank must be a number greater than zero.";
 
@@ -97,7 +96,6 @@ const SkillTest = () => {
 
   return (
     <div className="flex flex-col items-center gap-6 w-full">
-      {/* Test Info Card */}
       <div className="flex justify-between items-start border border-gray-300 rounded-lg p-6 w-full mx-auto">
         <div className="flex items-center space-x-4">
           <img
