@@ -67,14 +67,14 @@ const SkillTest = () => {
     if (
       !formData.percentile ||
       isNaN(formData.percentile) ||
-      formData.percentile <= 0
+      formData.percentile <= 0 || formData.percentile > 100
     )
       newErrors.percentile = "required It percentile 0-100 ";
 
     if (
       !formData.currentScore ||
       isNaN(formData.currentScore) ||
-      formData.currentScore <= 0
+      formData.currentScore <= 0 || formData.currentScore > 15
     )
       newErrors.currentScore = "required It score 0-15";
 
@@ -82,6 +82,8 @@ const SkillTest = () => {
       setErrors(newErrors);
       return;
     }
+
+    
     dispatch(
       updateUserData({
         rank: formData.rank,
